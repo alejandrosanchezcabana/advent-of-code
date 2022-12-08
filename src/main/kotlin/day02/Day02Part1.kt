@@ -4,7 +4,7 @@ import AdventDayProblem
 import java.io.File
 import java.io.UnsupportedEncodingException
 
-class Day02Part2 : AdventDayProblem {
+class Day02Part1 : AdventDayProblem {
   private val inputFile = "src/main/kotlin/day02/Day02.txt"
   override fun runProblem(): String {
     var points = 0
