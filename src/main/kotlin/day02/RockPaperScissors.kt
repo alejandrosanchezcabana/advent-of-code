@@ -25,4 +25,11 @@ enum class RockPaperScissors(
     }
   }
 
+  fun getOpponentWeakness(): String {
+    return wins
+  }
+  fun getOpponentStrength(): String {
+    return loss
+  }
+
 }
