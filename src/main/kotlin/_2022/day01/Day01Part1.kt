@@ -1,9 +1,9 @@
-package day01
+package _2022.day01
 
 import AdventDayProblem
 import java.io.File
 
-class Day01Part2 : AdventDayProblem {
+class Day01Part1 : AdventDayProblem {
   private val inputFile = "src/main/kotlin/day01/Day01.txt"
 
   override fun runProblem(): String {
@@ -12,6 +12,6 @@ class Day01Part2 : AdventDayProblem {
       .map { it.lines().sumOf(String::toInt) }
       .sortedDescending()
 
-    return (calories[0] + calories[1] + calories[2]).toString()
+    return calories.max().toString()
   }
 }

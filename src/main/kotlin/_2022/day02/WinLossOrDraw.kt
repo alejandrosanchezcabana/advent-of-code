@@ -1,4 +1,4 @@
-package day02
+package _2022.day02
 
 enum class WinLossOrDraw(val points : Int, var symbol: String) {
   WIN(6, "Z"),

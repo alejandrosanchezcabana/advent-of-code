@@ -1,20 +1,19 @@
-package day06
+package _2022.day06
 
 import AdventDayProblem
 import java.io.File
 
-class Day06Part2 : AdventDayProblem {
+class Day06Part1 : AdventDayProblem {
   private val inputFile = "src/main/kotlin/day06/day06.txt"
   override fun runProblem(): String {
-    val packetSize = 14
     val signal = File(inputFile).readText()
 
-    for (index in packetSize..signal.length) {
+    for (index in 4..signal.length) {
       val set = HashSet<Char>()
-      for (element in signal.substring(index - packetSize, index)) {
+      for (element in signal.substring(index - 4, index)) {
         set.add(element)
       }
-      if (set.size == packetSize) {
+      if (set.size == 4) {
         return index.toString()
       }
     }

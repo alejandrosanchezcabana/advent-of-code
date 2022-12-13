@@ -1,11 +1,11 @@
-package day05
+package _2022.day05
 
 import AdventDayProblem
 import java.io.File
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Day05Part2 : AdventDayProblem {
+class Day05Part1 : AdventDayProblem {
   private val inputFile = "src/main/kotlin/day05/day05.txt"
   private val cratesPosition = HashMap<Int, Stack<String>>().toMutableMap()
   override fun runProblem(): String {
@@ -28,14 +28,10 @@ class Day05Part2 : AdventDayProblem {
       val originStack = move.split(" ")[3].toInt()
       val destinationStack = move.split(" ")[5].toInt()
 
-      val tempArray = ArrayList<String>()
-
       while (numberOfMoves != 0) {
-        tempArray.add(cratesPosition[originStack]!!.pop())
+        cratesPosition[destinationStack]!!.add(cratesPosition[originStack]!!.pop())
         numberOfMoves--
       }
-
-      cratesPosition[destinationStack]!!.addAll(tempArray.asReversed())
     }
   }
 

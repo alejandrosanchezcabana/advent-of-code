@@ -1,4 +1,4 @@
-package day02
+package _2022.day02
 
 enum class RockPaperScissors(
   val yours: String,

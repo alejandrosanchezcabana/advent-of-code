@@ -1,34 +1,45 @@
-package day03
+package _2022.day03
 
 import AdventDayProblem
 import java.io.File
 import java.util.stream.Collectors
 
 
-class Day03Part1 : AdventDayProblem {
+class Day03Part2 : AdventDayProblem {
 
   private val inputFile = "src/main/kotlin/day03/Day03.txt"
   override fun runProblem(): String {
     var priorities = 0
-    for (rugsack: String in File(inputFile).readLines()) {
-      val firstCompartment = rugsack.substring(0, rugsack.length / 2)
-      val secondCompartment = rugsack.substring(rugsack.length / 2)
+    var elf1 = ""
+    var elf2 = ""
+    var elf3: String
 
-      priorities += calculatePriorities(calculateDuplicates(firstCompartment, secondCompartment))
+    for (rugsack: String in File(inputFile).readLines()) {
+      if (elf1 == "") {
+        elf1 = rugsack
+      } else if (elf2 == "") {
+        elf2 = rugsack
+      } else {
+        elf3 = rugsack
+        priorities += calculatePriorities(calculateDuplicates(elf1, elf2, elf3))
+        elf1 = ""
+        elf2 = ""
+      }
     }
 
     return priorities.toString()
   }
 
-  private fun calculateDuplicates(firstCompartment: String, secondCompartment: String): ArrayList<Char> {
+  private fun calculateDuplicates(elf1: String, elf2: String, elf3: String): ArrayList<Char> {
     var listOfDuplicates = ArrayList<Char>()
-    for (firstCompartmentElement: Char in firstCompartment.toCharArray()) {
-      if (secondCompartment.toCharArray().contains(firstCompartmentElement)) {
-        listOfDuplicates.add(firstCompartmentElement)
+    for (elf1Elements: Char in elf1.toCharArray()) {
+      if (elf2.toCharArray().contains(elf1Elements) and elf3.toCharArray().contains(elf1Elements)) {
+        listOfDuplicates.add(elf1Elements)
       }
     }
 
     listOfDuplicates = listOfDuplicates.stream().distinct().collect(Collectors.toList()) as ArrayList<Char>
+
     return listOfDuplicates
   }
 
