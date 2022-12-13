@@ -4,7 +4,7 @@ import AdventDayProblem
 import java.io.File
 
 class Day06Part2 : AdventDayProblem {
-  private val inputFile = "src/main/kotlin/day06/day06.txt"
+  private val inputFile = "src/main/kotlin/_2022/day06/day06.txt"
   override fun runProblem(): String {
     val packetSize = 14
     val signal = File(inputFile).readText()

@@ -7,7 +7,7 @@ import java.util.stream.Collectors
 
 class Day03Part2 : AdventDayProblem {
 
-  private val inputFile = "src/main/kotlin/day03/Day03.txt"
+  private val inputFile = "src/main/kotlin/_2022/day03/Day03.txt"
   override fun runProblem(): String {
     var priorities = 0
     var elf1 = ""

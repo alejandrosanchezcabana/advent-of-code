@@ -6,7 +6,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class Day05Part1 : AdventDayProblem {
-  private val inputFile = "src/main/kotlin/day05/day05.txt"
+  private val inputFile = "src/main/kotlin/_2022/day05/day05.txt"
   private val cratesPosition = HashMap<Int, Stack<String>>().toMutableMap()
   override fun runProblem(): String {
     val listOfTops = ArrayList<String>()

@@ -5,7 +5,7 @@ import java.io.File
 
 class Day04Part1 : AdventDayProblem {
 
-  private val inputFile = "src/main/kotlin/day04/day04.txt"
+  private val inputFile = "src/main/kotlin/_2022/day04/day04.txt"
   override fun runProblem(): String {
     var uselessAssignments = 0
 
